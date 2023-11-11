@@ -5,7 +5,7 @@
 #define MAX_VALUE 20
 #define DIM 3
 #define MIN_DIM_POWER 3
-#define MAX_DIM_POWER 11    
+#define MAX_DIM_POWER 10    
 
 void init(const int dim, int * const m) {
     for (int i = 0; i < dim * dim; i++) {
@@ -109,10 +109,8 @@ void run_test(const int dim) {
 
     int verif = verify(dim, c, c2);
 
-    printf("Standard multiplication: %ld seconds, %d microseconds\n",
-           (long)time_multiply.tv_sec, (int)time_multiply.tv_usec);
-    printf("Multiplication with transpose: %ld seconds, %d microseconds\n",
-           (long)time_transpose_multiply.tv_sec, (int)time_transpose_multiply.tv_usec);
+    printf("Standard multiplication: %ld seconds, %d microseconds\n", (long)time_multiply.tv_sec, (int)time_multiply.tv_usec);
+    printf("Multiplication with transpose: %ld seconds, %d microseconds\n", (long)time_transpose_multiply.tv_sec, (int)time_transpose_multiply.tv_usec);
 
     if (verif == 1) {
         printf("Results agree.\n");
